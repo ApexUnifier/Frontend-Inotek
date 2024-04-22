@@ -1,0 +1,52 @@
+[
+  {
+    "date": "2024-04-23",
+    "company_name": "Example Company 1",
+    "job_role": "Software Engineer",
+    "company_logo": "https://via.placeholder.com/150",
+    "tags": ["Full Time", "Senior Level"],
+    "salary": "$80,000 - $100,000",
+    "location": "New York, NY",
+    "bg": "#fac088"
+  },
+  {
+    "date": "2024-04-24",
+    "company_name": "Example Company 2",
+    "job_role": "Data Analyst",
+    "company_logo": "https://via.placeholder.com/150",
+    "tags": ["Part Time", "Project Work"],
+    "salary": "$60,000 - $80,000",
+    "location": "San Francisco, CA",
+    "bg": "#aaf7af"
+  },
+  {
+    "date": "2024-04-25",
+    "company_name": "Example Company 3",
+    "job_role": "Marketing Manager",
+    "company_logo": "https://via.placeholder.com/150",
+    "tags": ["Full Time", "Entry Level"],
+    "salary": "$50,000 - $70,000",
+    "location": "Chicago, IL",
+    "bg": "#c170f8"
+  },
+  {
+    "date": "2024-04-25",
+    "company_name": "Example Company 4",
+    "job_role": "Product Manager",
+    "company_logo": "https://via.placeholder.com/150",
+    "tags": ["Full Time", "Senior Level"],
+    "salary": "$90,000 - $120,000",
+    "location": "Los Angeles, CA",
+    "bg": "#feb7eb"
+  },
+  {
+    "date": "2024-04-25",
+    "company_name": "Example Company 4",
+    "job_role": "Product Manager",
+    "company_logo": "https://via.placeholder.com/150",
+    "tags": ["Full Time", "Senior Level"],
+    "salary": "$90,000 - $120,000",
+    "location": "Los Angeles, CA",
+    "bg": "#feb7eb"
+  }
+]

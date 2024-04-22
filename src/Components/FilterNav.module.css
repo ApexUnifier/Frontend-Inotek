@@ -1,0 +1,14 @@
+.sliderContainer{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.text{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+.hr{
+    color: aqua;
+    border-color: rgb(81, 81, 81);
+}
