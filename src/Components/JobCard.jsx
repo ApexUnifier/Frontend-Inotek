@@ -1,5 +1,6 @@
 import { Box, Flex, Button, Text, Badge, Image } from "@chakra-ui/react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function JobCard({
   company_name,
@@ -54,7 +55,7 @@ export default function JobCard({
         {" "}
         {/* Push buttons to bottom */}
         <Button colorScheme="gray" variant="solid" mr="2">
-          Details
+          <Link to='/jobdetails'>Details</Link>
         </Button>
         <Button colorScheme="gray" variant="outline">
           Save for Later
