@@ -1,29 +1,43 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Grid,
-} from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import  { useState, useEffect } from "react";
+import { Box, Flex, Heading, Text, Grid } from "@chakra-ui/react";
 import JobCard from "./JobCard";
+
 export default function FindJobSecMain() {
-    const [jobs, setJobs] = useState([]);
-
-    useEffect(() => {
-      async function fetchJobs() {
-        try {
-          const response = await fetch("db/db.json");
-          const data = await response.json();
-          setJobs(data);
-        } catch (error) {
-          console.error("Error fetching jobs:", error);
+  const [jobs, setJobs] = useState([]);
+  const colors = [
+    "#E0FFFF", // Light Cyan
+    "#F0E68C", // Khaki
+    "#FFE4C4", // Bisque
+    "#F0FFF0", // Honeydew
+    "#FFF8DC", // Cornsilk
+    "#FFDAB9", // Peach Puff
+    "#F5DEB3", // Wheat
+    "#FAFAD2", // Light Goldenrod Yellow
+    "#FFEFDB", // Pale Goldenrod
+    "#F0F8FF", // Alice Blue
+    "#F0FFFF", // Azure
+    "#F5F5DC", // Beige
+  ];
+  const getindex = ()=>{
+    return Math.floor(Math.random()*12)
+  }
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await fetch("http://localhost:4001/api/vacancy/");
+        if (!response.ok) {
+          throw new Error("Failed to fetch jobs");
         }
+        const data = await response.json();
+        setJobs(data.vacancies);
+        console.log(data.vacancies);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
       }
+    };
 
-      fetchJobs();
-    }, []);
-
+    fetchJobs();
+  }, []);
 
   return (
     <Box w="85%" p="20px" pt="0">
@@ -36,7 +50,7 @@ export default function FindJobSecMain() {
             borderRadius="20px"
             fontWeight="bold"
           >
-            69
+            {jobs.length}
           </Box>
         </Flex>
         <Flex alignItems="center" gap="20px">
@@ -58,15 +72,18 @@ export default function FindJobSecMain() {
       >
         {jobs.map((job, index) => (
           <Box key={index}>
-            <JobCard
-              company_name={job.company_name}
-              job_role={job.job_role}
-              company_logo={job.company_logo}
-              tags={job.tags}
-              salary={job.salary}
-              location={job.location}
-              bg={job.bg}
-            />
+            {
+              job.company && 
+              <JobCard
+                company_name={job.company.name}
+                job_role={job.title}
+                company_logo={job.company.logo}
+                tags={job.skillsRequired}
+                salary={`${job.expectedSalary.minSalary} - ${job.expectedSalary.maxSalary}`}
+                location={job.location}
+                bg={colors[getindex()]}
+              />
+            }
           </Box>
         ))}
       </Grid>

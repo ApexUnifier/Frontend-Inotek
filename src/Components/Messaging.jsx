@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { SettingsIcon } from "@chakra-ui/icons";
 import PropTypes from "prop-types";
+import AudioComponent from "./AudioComponent";
 
 export default function Messaging() {
   return (
@@ -32,6 +33,7 @@ export default function Messaging() {
         <MessageItem sender="John Doe" message="Hello" />
         <MessageItem sender="John Doe" message="How are you?" />
         <MessageItem sender="John Doe" message="I'm fine, thanks!" />
+        <AudioComponent src ='./audio/recording.wav'/>
       </Flex>
       <InputGroup mt="4">
         <Input placeholder="Type your message..." />

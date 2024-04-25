@@ -1,6 +1,6 @@
 import { BellIcon, SettingsIcon } from "@chakra-ui/icons";
 import { Box, Heading, Flex, Avatar, Square } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function FindJobNav({ feature }) {
@@ -15,12 +15,14 @@ export default function FindJobNav({ feature }) {
         color="#777"
       >
         <Box>
-          <Heading
-            bgGradient="linear(to-r, blue.800, purple.300)"
-            backgroundClip="text"
-          >
-            Hirez
-          </Heading>
+          <Link to="/findjob">
+            <Heading
+              bgGradient="linear(to-r, blue.800, purple.300)"
+              backgroundClip="text"
+            >
+              Hirez
+            </Heading>
+          </Link>
         </Box>
         <Flex gap="12" alignItems="center" justifyContent="space-evenly">
           <Box

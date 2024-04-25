@@ -32,8 +32,10 @@ export default function JobCard({
           Save
         </Button>
       </Flex>
-      <Flex alignItems="center" mt="2">
-        <Image src={company_logo} alt={company_name} boxSize="50px" mr="2" />
+      <Flex alignItems="center" mt="2" >
+        {company_logo && (
+          <Image src={company_logo} alt={company_name} boxSize="50px" mr="2" />
+        )}
         <Text fontSize="lg" fontWeight="bold">
           {company_name}
         </Text>
@@ -55,7 +57,7 @@ export default function JobCard({
         {" "}
         {/* Push buttons to bottom */}
         <Button colorScheme="gray" variant="solid" mr="2">
-          <Link to='/jobdetails'>Details</Link>
+          <Link to="/jobdetails">Details</Link>
         </Button>
         <Button colorScheme="gray" variant="outline">
           Save for Later

@@ -9,6 +9,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 export default function LandingNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,13 +31,12 @@ export default function LandingNav() {
           <HamburgerIcon />
         </Button>
         <Box p="20px" pl="4">
-          <Heading
-            bgGradient="linear(to-r, blue.800, purple.300)"
-            backgroundClip="text"
-            fontSize="4xl" // Adjust font size as needed
-          >
-            Hirez
-          </Heading>
+        <Heading
+          bgGradient="linear(to-r, blue.800, purple.300)"
+          backgroundClip="text"
+        >
+          Hirez
+        </Heading>
         </Box>
       </Flex>
       <Box
@@ -45,25 +45,24 @@ export default function LandingNav() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Button
-          border="1px solid #cfcfcf"
-          bg="white"
-          borderRadius="30px"
-      
-        >
-          Login
-        </Button>
-        <Button colorScheme="purple" borderRadius="30px">
-          Signup
-        </Button>
+        <Link to="/login">
+          <Button border="1px solid #cfcfcf" bg="white" borderRadius="30px">
+            Login
+          </Button>
+        </Link>
+        <Link>
+          <Button colorScheme="purple" borderRadius="30px">
+            Signup
+          </Button>
+        </Link>
       </Box>
-      <Slide  direction="left" in={isOpen} style={{ zIndex: 10 }}>
+      <Slide direction="left" in={isOpen} style={{ zIndex: 10 }}>
         <VStack
           pos="fixed"
           top="0"
           left="0"
           h="100vh"
-          w={{base:"100%",md:"300px",lg:"300px"}}
+          w={{ base: "100%", md: "300px", lg: "300px" }}
           bg="gray.200"
           spacing="4"
           p="4"
